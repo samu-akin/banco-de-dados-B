@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ info.title }}</h1>
+<p>{{ info.description }}</p>
+
+<h2>Principais Funcionalidades</h2>
+<ul>
+    {% for feature in info.features %}
+        <li>{{ feature }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Contato</h2>
+<p><strong>Criador:</strong> {{ info.creator }}</p>
+<p><strong>Email:</strong> {{ info.contact }}</p>
+{% endblock %}
