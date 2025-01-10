@@ -82,3 +82,20 @@ def index():
     return render_template('index.html', form=form, name=session.get('name'),
                            known=session.get('known', False),
                            user_all=user_all);
+
+@app.route('/about')
+def about():
+    info = {
+        "title": "Sobre o Site",
+        "description": "Este site foi desenvolvido para demonstrar funcionalidades de Flask. "
+                       "Ele permite cadastrar usuários e gerenciar funções de maneira prática e eficiente.",
+        "features": [
+            "Cadastrar novos usuários.",
+            "Listar todos os usuários e suas funções.",
+            "Design responsivo com Flask-Bootstrap.",
+            "Persistência de dados com SQLAlchemy."
+        ],
+        "creator": "Samuel Akinroyeje",
+        "contact": "akinroyeje.s@aluno.ifsp.edu.br"
+    }
+    return render_template('about.html', info=info)
